@@ -2,14 +2,14 @@ package com.epam.mjc.io;
 
 import java.io.*;
 
-public class Filereader {
+public class FileReader {
     public Profile getDataFromFile(File file) {
         String name = null;
         int age = 0;
         String email = null;
         Long phone = null;
 
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+        try (BufferedReader reader = new BufferedReader(new java.io.FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 if (line.startsWith("Name:")) {
